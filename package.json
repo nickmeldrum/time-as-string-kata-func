@@ -1,0 +1,17 @@
+{
+  "name": "time-as-string",
+  "version": "0.0.1",
+  "description": "time-as-string kata exercise",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "./node_modules/mocha/bin/mocha -G",
+    "watch": "./node_modules/nodemon/bin/nodemon.js -x 'npm test'"
+  },
+  "author": "Nick Meldrum",
+  "license": "MIT",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^2.5.3",
+    "nodemon": "^1.9.2"
+  }
+}
