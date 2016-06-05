@@ -11,4 +11,8 @@ describe('formatTime', function() {
     it('formats 1 as 1 second', function() {
         expect(formatTime(1)).to.equal('1 second')
     })
+
+    it('formats 60 as 1 minute', function() {
+        expect(formatTime(60)).to.equal('1 minute')
+    })
 })
