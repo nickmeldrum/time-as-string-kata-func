@@ -1,5 +1,4 @@
- # time-as-string
+# time-as-string
 
 kata coding exercise
-
 
