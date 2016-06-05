@@ -4,15 +4,20 @@ const expect = chai.expect
 const formatTime = require('../lib/index.js')
 
 describe('formatTime', function() {
-    it('formats 0 as 0 seconds', function() {
-        expect(formatTime(0)).to.equal('0 seconds')
-    })
+    test(0, '0 seconds')
+    test(1, '1 second')
+    test(2, '2 seconds')
+    test(60, '1 minute')
+    test(61, '1 minute and 1 second')
+    test(62, '1 minute and 2 seconds')
+    test(120, '2 minutes')
+    test(3600, '1 hour')
+    test(7200, '2 hours')
+    test(7201, '2 hours and 1 second')
 
-    it('formats 1 as 1 second', function() {
-        expect(formatTime(1)).to.equal('1 second')
-    })
-
-    it('formats 60 as 1 minute', function() {
-        expect(formatTime(60)).to.equal('1 minute')
-    })
+    function test(input, expectedOutput) {
+        it(`formats ${input} as ${expectedOutput}`, function() {
+            expect(formatTime(input)).to.equal(expectedOutput)
+        })
+    }
 })
