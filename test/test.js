@@ -6,22 +6,24 @@ const expect = chai.expect
 const formatTime = require('../lib/index.js')
 
 describe('formatTime', function() {
-    test(0, '0 seconds')
-    test(1, '1 second')
-    test(2, '2 seconds')
-    test(60, '1 minute')
-    test(61, '1 minute and 1 second')
-    test(62, '1 minute and 2 seconds')
-    test(120, '2 minutes')
-    test(3600, '1 hour')
-    test(7200, '2 hours')
-    test(7201, '2 hours and 1 second')
-    test(7260, '2 hours and 1 minute')
-    test(7261, '2 hours, 1 minute and 1 second')
+    const testValues = [
+        { input: 0, expected: '0 seconds' },
+        { input: 1, expected: '1 second' },
+        { input: 2, expected: '2 seconds' },
+        { input: 60, expected: '1 minute' },
+        { input: 61, expected: '1 minute and 1 second' },
+        { input: 62, expected: '1 minute and 2 seconds' },
+        { input: 120, expected: '2 minutes' },
+        { input: 3600, expected: '1 hour' },
+        { input: 7200, expected: '2 hours' },
+        { input: 7201, expected: '2 hours and 1 second' },
+        { input: 7260, expected: '2 hours and 1 minute' },
+        { input: 7261, expected: '2 hours, 1 minute and 1 second' }
+    ]
 
-    function test(input, expectedOutput) {
-        it(`formats ${input} as ${expectedOutput}`, function() {
-            expect(formatTime(input)).to.equal(expectedOutput)
+    testValues.forEach(testItem => {
+        it(`formats ${testItem.input} as ${testItem.expected}`, function() {
+            expect(formatTime(testItem.input)).to.equal(testItem.expected)
         })
-    }
+    })
 })
