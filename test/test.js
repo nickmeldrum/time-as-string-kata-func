@@ -18,7 +18,15 @@ describe('formatTime', function() {
         { input: 7200, expected: '2 hours' },
         { input: 7201, expected: '2 hours and 1 second' },
         { input: 7260, expected: '2 hours and 1 minute' },
-        { input: 7261, expected: '2 hours, 1 minute and 1 second' }
+        { input: 7261, expected: '2 hours, 1 minute and 1 second' },
+        { input: 86400, expected: '1 day' },
+        { input: 86461, expected: '1 day, 1 minute and 1 second' },
+        { input: 90061, expected: '1 day, 1 hour, 1 minute and 1 second' },
+        { input: 604800, expected: '1 week' },
+        { input: 31536000, expected: '1 year' },
+        { input: 31536001, expected: '1 year and 1 second' },
+        { input: 31539601, expected: '1 year, 1 hour and 1 second' },
+        { input: 32230861, expected: '1 year, 1 week, 1 day, 1 hour, 1 minute and 1 second' },
     ]
 
     testValues.forEach(testItem => {
