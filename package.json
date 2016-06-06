@@ -5,7 +5,9 @@
   "main": "lib/index.js",
   "scripts": {
     "test": "./node_modules/mocha/bin/mocha -G",
-    "watch": "./node_modules/nodemon/bin/nodemon.js -x 'npm test'"
+    "test-win": "node ./node_modules/mocha/bin/mocha -G",
+    "watch": "./node_modules/nodemon/bin/nodemon.js -x 'npm test'",
+    "watch-win": "node ./node_modules/nodemon/bin/nodemon.js -x npm run test-win"
   },
   "author": "Nick Meldrum",
   "license": "MIT",
