@@ -14,6 +14,8 @@ describe('formatTime', function() {
     test(3600, '1 hour')
     test(7200, '2 hours')
     test(7201, '2 hours and 1 second')
+    test(7260, '2 hours and 1 minute')
+    test(7261, '2 hours, 1 minute and 1 second')
 
     function test(input, expectedOutput) {
         it(`formats ${input} as ${expectedOutput}`, function() {
